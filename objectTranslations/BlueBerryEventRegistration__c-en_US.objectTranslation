@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BlueBerryEventRegistration</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BlueBerryEventRegistrations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Attendee Email --></label>
+        <name>Attendee_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Name --></label>
+        <name>BlueBerryEvent__c</name>
+        <relationshipLabel><!-- BlueBerryEventRegistrations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Session Name --></label>
+        <name>BlueBerrySession__c</name>
+        <relationshipLabel><!-- Registered List --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cancel Registration --></label>
+        <name>Cancel_Registration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attendee --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Event Attendee List --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- checkifunique --></label>
+        <name>checkifunique__c</name>
+    </fields>
+    <layouts>
+        <layout>BlueBerryEventRegistration Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

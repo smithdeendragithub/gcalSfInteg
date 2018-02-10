@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Close</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewTask</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ActivityDate</fullName>
+    </fields>
+    <fields>
+        <fullName>CallDisposition</fullName>
+    </fields>
+    <fields>
+        <fullName>CallDurationInSeconds</fullName>
+    </fields>
+    <fields>
+        <fullName>CallObject</fullName>
+    </fields>
+    <fields>
+        <fullName>CallType</fullName>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>IsRecurrence</fullName>
+    </fields>
+    <fields>
+        <fullName>IsReminderSet</fullName>
+    </fields>
+    <fields>
+        <fullName>IsVisibleInSelfService</fullName>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RecurrenceInterval</fullName>
+    </fields>
+    <fields>
+        <fullName>RecurrenceRegeneratedType</fullName>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TaskSubtype</fullName>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WhatId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>WhoId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <sharingModel>Private</sharingModel>
+    <webLinks>
+        <fullName>Google_Calendar_Create_Event</fullName>
+        <availability>online</availability>
+        <description>Create Google Calendar event</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Google Calendar Create Event</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;https://apis.google.com/js/client.js&quot;)};
+  {!REQUIRESCRIPT(&quot;/soap/ajax/39.0/connection.js&quot;)};
+  {!REQUIRESCRIPT(&quot;/soap/ajax/39.0/apex.js&quot;)};
+
+  var myquery = &quot;SELECT endTime__c, Recurrence__c, Resources__c, startTime__c, timezone__c,Subject FROM task WHERE Id = &apos;{!Task.Id}&apos; limit 1&quot;;
+
+  console.log(&apos;myquery&apos; + myquery);
+
+  result = sforce.connection.query(myquery); 
+  taskrecord = result.getArray(&quot;records&quot;);
+
+  //console.log(&apos;taskrecord : &apos;+taskrecord);
+
+  //set values for the variables
+
+  var eventstarttime = new Date(taskrecord[0].startTime__c).toISOString();
+  var eventstoptime = new Date(taskrecord[0].endTime__c).toISOString();
+  var eventrecurrenct = taskrecord[0].Recurrence__c;
+  var eventtimezone = taskrecord[0].timezone__c;
+  var eventresources = taskrecord[0].Resources__c;
+  var eventsubject = taskrecord[0].subject;
+
+console.log(&apos;\neventstarttime :&apos;+eventstarttime);
+console.log(&apos;\n {startTime__c}&apos;+&apos;{!Task.startTime__c}&apos;);
+
+  if(eventresources==&apos;Elevator 1&apos;)
+    eventresources=&apos;stratus360labs.com_2d3830303333303932323732@resource.calendar.google.com&apos;;
+  else if(eventresources==&apos;Elevator 2&apos;)
+    eventresources=&apos;stratus360labs.com_3835383637303831333330@resource.calendar.google.com&apos;;
+
+  if(eventrecurrenct){
+    var eventreccount  = &apos;4&apos;;//prompt(&quot;Please enter the number of recurrent&quot;,&quot;&quot;);
+    var eventrectype = &apos;WEEKLY&apos;;//prompt(&quot;Please enter the recurrence type&quot;,&quot;WEEKLY&quot;);
+    eventrecurrenct=&apos;RRULE:FREQ=&apos;+eventrectype+&apos;;INTERVAL=1;COUNT=1&apos;;
+  }
+  else{
+    eventrecurrenct=&apos;RRULE:FREQ=DAILY;INTERVAL=1;COUNT=1&apos;;
+  }
+
+ //var eventstarttime1 = &apos;{!YEAR(DATEVALUE(Task.startTime__c))}&apos; + &apos;-&apos; + &apos;{!MONTH(DATEVALUE(Task.startTime__c))}&apos; + &apos;-&apos; + &apos;{!DAY(DATEVALUE(Task.startTime__c))}&apos;+&apos;T&apos;+&apos;&apos;+&apos;&apos;+&apos;&apos;;
+//eventstoptime = &apos;{!YEAR(DATEVALUE(Task.endTime__c))}&apos; + &apos;-&apos; + &apos;{!MONTH(DATEVALUE(Task.endTime__c))}&apos; + &apos;-&apos; + &apos;{!DAY(DATEVALUE(Task.endTime__c))}&apos;;
+
+
+
+  handleClientLoad();
+  var clientId = &apos;1028940658071-noa6enfb2eulbubj70dec27aaacqhkfl.apps.googleusercontent.com&apos;;
+
+  //console.log(&apos;after client id&apos;);
+
+  var apiKey = &apos;jzvwC7UZK1E0BPZ_zIB4uqqI&apos;; 
+
+  //console.log(&apos;after apiKEy&apos;);
+  var scopes = &apos;https://www.googleapis.com/auth/calendar&apos;;
+  //console.log(&apos;after scopes&apos;);
+   
+  function handleClientLoad() {
+
+  //console.log(&apos;apiKey :&apos;+apiKey);
+  //console.log(&apos;GAP &apos; + gapi.client);
+
+
+  gapi.client.setApiKey(apiKey);
+  window.setTimeout(checkAuth,1);
+
+  //console.log(&apos;Inside handleClientLoad&apos;);
+
+  }
+   
+  //console.log(&apos;after handle client load&apos;);
+
+  function checkAuth() {
+
+  //console.log(&apos;Inside checkAuth&apos;);
+
+  gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
+  //console.log(&apos;Inside checkAuth after authorizing&apos;);
+  } 
+   //console.log(&apos;after checkAuth&apos;);
+  function handleAuthResult(authResult) {
+  // var authorizeButton = document.getElementById(&apos;authorize-button&apos;);
+  console.log(&apos;Inside handleAuthResult&apos;);
+  if (authResult &amp;&amp; !authResult.error) {
+  console.log(&apos;Inside handleAuthResult if loop&apos;);
+   
+  makeApiCall(); 
+   
+  } else {
+  console.log(&apos;Inside handleAuthResult else loop&apos;);
+  handleAuthClick();
+  }
+  } 
+   console.log(&apos;Before handleAuthClick&apos;);
+  function handleAuthClick() {
+  console.log(&apos;Inside handleAuthClick&apos;);
+  gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
+  console.log(&apos;Inside handleAuthClick after authorize&apos;);
+  return false;
+  } 
+   
+   console.log(&apos;Before makeApiCall&apos;);
+
+  // Load the API and make an API call. Display the results on the screen.
+  function makeApiCall() {
+   console.log(&apos;Inside makeApiCall before addEvent&apos;);
+  AddEvent();
+  console.log(&apos;Inside makeApiCall after addEvent&apos;);
+  }
+
+   console.log(&apos;Before AddEvent&apos;);
+  function AddEvent()
+  {
+  console.log(&apos;Entering AddEvent&apos;);
+
+
+  var resource = {
+    &quot;summary&quot;: &apos;{!Task.Subject}&apos;,
+    &quot;location&quot;: &apos;{!Task.Subject}&apos;,
+    &quot;description&quot;: &apos;{!Task.Description}&apos;,
+    &quot;start&quot;: {
+      &quot;dateTime&quot;: eventstarttime,
+      &quot;timeZone&quot;: eventtimezone
+    },
+    &quot;end&quot;: {
+      &quot;dateTime&quot;: eventstoptime,
+      &quot;timeZone&quot;: eventtimezone
+    },
+
+    &quot;attendees&quot;: [
+      {&quot;email&quot;: eventresources}
+      
+    ]
+  };
+
+
+
+
+  console.log(&apos;resource &apos;+JSON.stringify(resource));
+  gapi.client.load(&apos;calendar&apos;, &apos;v3&apos;, function() {
+  var request = gapi.client.calendar.events.insert({
+  &apos;calendarId&apos;: &apos;primary&apos;,
+  &apos;resource&apos;: resource
+  });
+
+  //console.log(&apos;Request&apos;+request);
+  request.execute(function(resp) {
+  //console.log(resp);
+  if (resp.id){
+  alert(&quot;Event was successfully added to the calendar!\n Event Id: &quot;+resp.id+&apos;\n Event Link: &apos;+resp.htmlLink);
+  window.location.reload();
+  }
+  else{
+  alert(&quot;An error occurred. Please try again later.&quot;+JSON.stringify(resp));
+  } 
+   
+  });
+  }); 
+   
+  }</url>
+    </webLinks>
+</CustomObject>

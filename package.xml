@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>AccountHandler</members>
+        <members>AsyncSampleApexGeneratedFromWSDL</members>
+        <members>AsyncSentientsoftwareCom</members>
+        <members>BB_SuccessHotelDeals</members>
+        <members>BBC_Events_List</members>
+        <members>BBC_Events_List_Test</members>
+        <members>BBEvent_Registration_Contorller</members>
+        <members>ChangePasswordController</members>
+        <members>ChangePasswordControllerTest</members>
+        <members>CommunitiesLandingController</members>
+        <members>CommunitiesLandingControllerTest</members>
+        <members>CommunitiesLoginController</members>
+        <members>CommunitiesLoginControllerTest</members>
+        <members>CommunitiesSelfRegConfirmController</members>
+        <members>CommunitiesSelfRegConfirmControllerTest</members>
+        <members>CommunitiesSelfRegController</members>
+        <members>CommunitiesSelfRegControllerTest</members>
+        <members>ContactAndLeadSearch</members>
+        <members>ContactSearch</members>
+        <members>ContactsTodayController</members>
+        <members>ContactsTodayController_test</members>
+        <members>CountryStateController</members>
+        <members>CustomLookup_ctrl</members>
+        <members>CustomLookupManager</members>
+        <members>ForgotPasswordController</members>
+        <members>ForgotPasswordControllerTest</members>
+        <members>InlineVFExpanderController</members>
+        <members>InvoiceActionController</members>
+        <members>LightningForgotPasswordController</members>
+        <members>LightningLoginFormController</members>
+        <members>LightningSelfRegisterController</members>
+        <members>mockHotwireWebsite</members>
+        <members>MyProfilePageController</members>
+        <members>MyProfilePageControllerTest</members>
+        <members>OlderAccountsUtility</members>
+        <members>OpportunityAlertController</members>
+        <members>OpportunityAlertController_test</members>
+        <members>ProcesBuilderTest</members>
+        <members>RoleUtil</members>
+        <members>SampleApexGeneratedFromWSDL</members>
+        <members>SampleWrapperClass</members>
+        <members>sentientsoftwareCom</members>
+        <members>SiteLoginController</members>
+        <members>SiteLoginControllerTest</members>
+        <members>SiteRegisterController</members>
+        <members>SiteRegisterControllerTest</members>
+        <members>StringArrayTest</members>
+        <members>TestingClass</members>
+        <members>TestPageController</members>
+        <members>TreeViewController</members>
+        <members>unregisterAttendee</members>
+        <members>unregisterAttendeeSchedule</members>
+        <members>WelcomeController</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>SiteFooter</members>
+        <members>SiteHeader</members>
+        <members>SiteLogin</members>
+        <members>SitePoweredBy</members>
+        <members>TreeView</members>
+        <name>ApexComponent</name>
+    </types>
+    <types>
+        <members>AnswersHome</members>
+        <members>BandwidthExceeded</members>
+        <members>BB_Register_form</members>
+        <members>BB_Registration_success</members>
+        <members>ChangePassword</members>
+        <members>CommunitiesLanding</members>
+        <members>CommunitiesLogin</members>
+        <members>CommunitiesSelfReg</members>
+        <members>CommunitiesSelfRegConfirm</members>
+        <members>CommunitiesTemplate</members>
+        <members>ContactView</members>
+        <members>CountryList</members>
+        <members>CustomLookup</members>
+        <members>CustomLookupManager</members>
+        <members>CustomPage</members>
+        <members>DisplayImage</members>
+        <members>DisplayUserInfo</members>
+        <members>EditInvoicePage</members>
+        <members>EventsList</members>
+        <members>Exception</members>
+        <members>FileNotFound</members>
+        <members>finalReults</members>
+        <members>ForgotPassword</members>
+        <members>ForgotPasswordConfirm</members>
+        <members>Google_API_Integration</members>
+        <members>Googleapiv1</members>
+        <members>googleapiv2</members>
+        <members>IdeasHome</members>
+        <members>InlineVFExpander</members>
+        <members>InMaintenance</members>
+        <members>InvoiceActionpage</members>
+        <members>MyProfilePage</members>
+        <members>OData_demo</members>
+        <members>OppTest</members>
+        <members>SampleWrapper</members>
+        <members>SiteLogin</members>
+        <members>SiteRegister</members>
+        <members>SiteRegisterConfirm</members>
+        <members>SiteTemplate</members>
+        <members>SortingTest</members>
+        <members>StdExceptionTemplate</members>
+        <members>TestingVFpage</members>
+        <members>TestPage</members>
+        <members>Tutorialpage</members>
+        <members>Unauthorized</members>
+        <members>UnderConstruction</members>
+        <members>WelcomePage</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexTestSuite</name>
+    </types>
+    <types>
+        <members>Attachment_clone</members>
+        <members>CustomTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>AppMenu</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApprovalProcess</name>
+    </types>
+    <types>
+        <members>Case.Assign Booyah</members>
+        <members>Case.Standard</members>
+        <members>Lead.Standard</members>
+        <name>AssignmentRule</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>AuthProvider</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CallCenter</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Community</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ConnectedApp</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomApplicationComponent</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomLabels</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
+        <members>Account</members>
+        <members>AccountCleanInfo</members>
+        <members>AccountContactRole</members>
+        <members>Activity</members>
+        <members>AgentWork</members>
+        <members>Asset</members>
+        <members>AssetRelationship</members>
+        <members>AssistantProgress</members>
+        <members>Campaign</members>
+        <members>CampaignMember</members>
+        <members>Case</members>
+        <members>CaseContactRole</members>
+        <members>ChannelProgram</members>
+        <members>ChannelProgramLevel</members>
+        <members>ChannelProgramMember</members>
+        <members>CollaborationGroup</members>
+        <members>CollaborationGroupMember</members>
+        <members>Contact</members>
+        <members>ContactCleanInfo</members>
+        <members>ContentVersion</members>
+        <members>Contract</members>
+        <members>ContractContactRole</members>
+        <members>DandBCompany</members>
+        <members>DuplicateRecordItem</members>
+        <members>DuplicateRecordSet</members>
+        <members>EmailMessage</members>
+        <members>Event</members>
+        <members>ExchangeUserMapping</members>
+        <members>FeedItem</members>
+        <members>ForecastingCategoryMapping</members>
+        <members>Idea</members>
+        <members>Lead</members>
+        <members>LeadCleanInfo</members>
+        <members>LiveAgentSession</members>
+        <members>LiveChatTranscript</members>
+        <members>LiveChatTranscriptEvent</members>
+        <members>LiveChatTranscriptSkill</members>
+        <members>LiveChatVisitor</members>
+        <members>Macro</members>
+        <members>MacroAction</members>
+        <members>MacroInstruction</members>
+        <members>NetworkMember</members>
+        <members>Opportunity</members>
+        <members>OpportunityCompetitor</members>
+        <members>OpportunityContactRole</members>
+        <members>OpportunityLineItem</members>
+        <members>Order</members>
+        <members>OrderItem</members>
+        <members>OrgDeleteRequest</members>
+        <members>PartnerFundAllocation</members>
+        <members>PartnerFundClaim</members>
+        <members>PartnerFundRequest</members>
+        <members>PartnerMarketingBudget</members>
+        <members>PartnerRole</members>
+        <members>PendingServiceRouting</members>
+        <members>Pricebook2</members>
+        <members>PricebookEntry</members>
+        <members>Product2</members>
+        <members>QuickText</members>
+        <members>Scorecard</members>
+        <members>ScorecardAssociation</members>
+        <members>ScorecardMetric</members>
+        <members>Site</members>
+        <members>SocialPersona</members>
+        <members>Solution</members>
+        <members>StreamingChannel</members>
+        <members>Task</members>
+        <members>Topic</members>
+        <members>TopicAssignment</members>
+        <members>User</members>
+        <members>UserProvisioningRequest</members>
+        <members>UserServicePresence</members>
+        <members>BBContact__c</members>
+        <members>BBEvent__c</members>
+        <members>BBEventRegistration__c</members>
+        <members>BBSession__c</members>
+        <members>BlueBerryEvent__c</members>
+        <members>BlueBerryEventRegistration__c</members>
+        <members>BlueBerrySession__c</members>
+        <members>BlueBerryVenue__c</members>
+        <members>InlineVFExpander_Pages__c</members>
+        <members>Invoice__c</members>
+        <members>Line_Item__c</members>
+        <members>samplecustomsetting__c</members>
+        <members>smith__c</members>
+        <members>Suggestion__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomObjectTranslation</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomPageWebLink</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomPermission</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomSite</name>
+    </types>
+    <types>
+        <members>BlueBerryEvent__c</members>
+        <members>BlueBerrySession__c</members>
+        <members>BlueBerryVenue__c</members>
+        <members>Invoice__c</members>
+        <members>InvoiceAction</members>
+        <members>MyData</members>
+        <members>smith__c</members>
+        <members>Stratus_DMP</members>
+        <members>Suggestion__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>DataCategoryGroup</name>
+    </types>
+    <types>
+        <members>unfiled$public</members>
+        <members>unfiled$public/CommunityChangePasswordEmailTemplate</members>
+        <members>unfiled$public/CommunityForgotPasswordEmailTemplate</members>
+        <members>unfiled$public/CommunityWelcomeEmailTemplate</members>
+        <members>unfiled$public/EventRegistrationSuccess</members>
+        <members>unfiled$public/MarketingProductInquiryResponse</members>
+        <members>unfiled$public/SalesNewCustomerEmail</members>
+        <members>unfiled$public/SupportCaseAssignmentNotification</members>
+        <members>unfiled$public/SupportCaseCreatedPhoneInquiries</members>
+        <members>unfiled$public/SupportCaseCreatedWebInquiries</members>
+        <members>unfiled$public/SupportCaseResponse</members>
+        <members>unfiled$public/SupportEscalatedCaseNotification</members>
+        <members>unfiled$public/SupportEscalatedCaseReassignment</members>
+        <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
+        <members>unfiled$public/SupportSelfServiceNewLoginandPassword</members>
+        <members>unfiled$public/SUPPORTSelfServiceNewUserLoginInformationSAMPLE</members>
+        <members>unfiled$public/SupportSelfServiceResetPassword</members>
+        <members>unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE</members>
+        <members>BlueBerryEvents_Email</members>
+        <members>BlueBerryEvents_Email/EventRegistration</members>
+        <members>BlueBerryEvents_Email/Trailhead_Service_Email_Template</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>Case.Booyah</members>
+        <members>Case.Standard</members>
+        <name>EscalationRule</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>Add_Line_Item_from_Invoice_and_Update_Stock_Quantity-1</members>
+        <members>Testing_Apex_Class</members>
+        <members>TestingProcess-1</members>
+        <members>Update_Status</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Group</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>HomePageComponent</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>HomePageLayout</name>
+    </types>
+    <types>
+        <members>Account-Account %28Marketing%29 Layout</members>
+        <members>Account-Account %28Sales%29 Layout</members>
+        <members>Account-Account %28Support%29 Layout</members>
+        <members>Account-Account Layout</members>
+        <members>Asset-Asset Layout</members>
+        <members>BBContact__c-BBContact Layout</members>
+        <members>BBEvent__c-BBEvent Layout</members>
+        <members>BBEventRegistration__c-BBEventRegistration Layout</members>
+        <members>BBSession__c-BBSession Layout</members>
+        <members>BlueBerryEvent__c-BlueBerryEvent Layout</members>
+        <members>BlueBerryEventRegistration__c-BlueBerryEventRegistration Layout</members>
+        <members>BlueBerrySession__c-BlueBerrySession Layout</members>
+        <members>BlueBerryVenue__c-BlueBerryVenue Layout</members>
+        <members>Campaign-Campaign Layout</members>
+        <members>CampaignMember-Campaign Member Page Layout</members>
+        <members>Case-Case %28Marketing%29 Layout</members>
+        <members>Case-Case %28Sales%29 Layout</members>
+        <members>Case-Case %28Support%29 Layout</members>
+        <members>Case-Case Layout</members>
+        <members>CaseClose-Close Case Layout</members>
+        <members>ChannelProgram-Channel Program Layout</members>
+        <members>ChannelProgramLevel-Channel Program Level Layout</members>
+        <members>ChannelProgramMember-Channel Program Member Layout</members>
+        <members>CollaborationGroup-Group Layout</members>
+        <members>Contact-Contact %28Marketing%29 Layout</members>
+        <members>Contact-Contact %28Sales%29 Layout</members>
+        <members>Contact-Contact %28Support%29 Layout</members>
+        <members>Contact-Contact Layout</members>
+        <members>ContentVersion-Content Version Layout</members>
+        <members>Contract-Contract Layout</members>
+        <members>DandBCompany-D%26B Company Layout</members>
+        <members>DuplicateRecordSet-Duplicate Record Set Layout</members>
+        <members>Event-Event Layout</members>
+        <members>FeedItem-Feed Item Layout</members>
+        <members>Global-Global Layout</members>
+        <members>Idea-Idea Layout</members>
+        <members>Invoice__c-Invoice Layout</members>
+        <members>Lead-Lead %28Marketing%29 Layout</members>
+        <members>Lead-Lead %28Sales%29 Layout</members>
+        <members>Lead-Lead %28Support%29 Layout</members>
+        <members>Lead-Lead Layout</members>
+        <members>Line_Item__c-Line Item Layout</members>
+        <members>LiveAgentSession-Live Agent Session Layout</members>
+        <members>LiveChatTranscript-Live Chat Transcript Layout</members>
+        <members>LiveChatTranscriptActive-Live Chat Transcript %28In Progress%29 Layout</members>
+        <members>LiveChatTranscriptEvent-Live Chat Transcript Event Layout</members>
+        <members>LiveChatTranscriptWaiting-Live Chat Transcript %28Waiting%29 Layout</members>
+        <members>LiveChatVisitor-Live Chat Visitor Layout</members>
+        <members>Macro-Macro Layout</members>
+        <members>Opportunity-Opportunity %28Marketing%29 Layout</members>
+        <members>Opportunity-Opportunity %28Sales%29 Layout</members>
+        <members>Opportunity-Opportunity %28Support%29 Layout</members>
+        <members>Opportunity-Opportunity Layout</members>
+        <members>OpportunityLineItem-Opportunity Product Layout</members>
+        <members>Order-Order Layout</members>
+        <members>OrderItem-Order Product Layout</members>
+        <members>PartnerFundAllocation-Partner Fund Allocation Layout</members>
+        <members>PartnerFundClaim-Partner Fund Claim Layout</members>
+        <members>PartnerFundRequest-Partner Fund Request Layout</members>
+        <members>PartnerMarketingBudget-Partner Marketing Budget Layout</members>
+        <members>Pricebook2-Price Book Layout</members>
+        <members>PricebookEntry-Price Book Entry Layout</members>
+        <members>Product2-Product Layout</members>
+        <members>QuickText-Quick Text Layout</members>
+        <members>Scorecard-Scorecard Layout</members>
+        <members>ScorecardAssociation-Scorecard Association Layout</members>
+        <members>ScorecardMetric-Scorecard Metric Layout</members>
+        <members>smith__c-smith Layout</members>
+        <members>SocialPersona-Social Persona Layout</members>
+        <members>SocialPost-Social Post Layout</members>
+        <members>Solution-Solution Layout</members>
+        <members>Suggestion__c-Suggestion Layout</members>
+        <members>Task-Task Layout</members>
+        <members>Task-Test Layout</members>
+        <members>User-User Layout</members>
+        <members>UserAlt-User Profile Layout</members>
+        <members>UserProvAccount-User Provisioning Account Layout</members>
+        <members>UserProvisioningLog-User Provisioning Log Layout</members>
+        <members>UserProvisioningRequest-User Provisioning Request Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Letterhead</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>LiveChatAgentConfig</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>LiveChatButton</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>LiveChatDeployment</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Network</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>PostTemplate</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Queue</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>QuickAction</name>
+    </types>
+    <types>
+        <members>ApexDevNet</members>
+        <members>GoogleCalendar</members>
+        <members>googleOAuth1</members>
+        <members>Hoteldetails</members>
+        <members>oauth2Google</members>
+        <name>RemoteSiteSetting</name>
+    </types>
+    <types>
+        <members>BlueBerryCustomReports</members>
+        <members>BlueBerryCustomReports/BlueBerry_EventManagementDetails</members>
+        <members>unfiled$public</members>
+        <members>unfiled$public/Public_EventManagement_Weekly_Report</members>
+        <members>unfiled$public/Status_of_Open_Suggestions</members>
+        <members>unfiled$public/Suggestions_By_Status</members>
+        <name>Report</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ReportType</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Role</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>SamlSsoConfig</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Scontrol</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Settings</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>SharingSet</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>SiteDotCom</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Skill</name>
+    </types>
+    <types>
+        <members>ajaxLoad</members>
+        <members>ajaxLoadGif</members>
+        <members>BBResources</members>
+        <members>DynaTree</members>
+        <members>InlineVFExpander</members>
+        <members>Sample</members>
+        <members>SiteSamples</members>
+        <members>test</members>
+        <members>test1</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>Account</members>
+        <members>AgentWork</members>
+        <members>Asset</members>
+        <members>AssetRelationship</members>
+        <members>AssistantProgress</members>
+        <members>BBContact__c</members>
+        <members>BBEvent__c</members>
+        <members>BBEventRegistration__c</members>
+        <members>BBSession__c</members>
+        <members>BlueBerryEvent__c</members>
+        <members>BlueBerryEventRegistration__c</members>
+        <members>BlueBerrySession__c</members>
+        <members>BlueBerryVenue__c</members>
+        <members>Campaign</members>
+        <members>CampaignMember</members>
+        <members>Case</members>
+        <members>ChannelProgram</members>
+        <members>ChannelProgramLevel</members>
+        <members>ChannelProgramMember</members>
+        <members>CollaborationGroup</members>
+        <members>CollaborationGroupMember</members>
+        <members>Contact</members>
+        <members>Contract</members>
+        <members>DandBCompany</members>
+        <members>DuplicateRecordItem</members>
+        <members>DuplicateRecordSet</members>
+        <members>EmailMessage</members>
+        <members>Event</members>
+        <members>ExchangeUserMapping</members>
+        <members>FeedItem</members>
+        <members>Idea</members>
+        <members>InlineVFExpander_Pages__c</members>
+        <members>Invoice__c</members>
+        <members>Lead</members>
+        <members>Line_Item__c</members>
+        <members>LiveAgentSession</members>
+        <members>LiveChatTranscript</members>
+        <members>LiveChatTranscriptEvent</members>
+        <members>LiveChatTranscriptSkill</members>
+        <members>Macro</members>
+        <members>MacroAction</members>
+        <members>MacroInstruction</members>
+        <members>NetworkMember</members>
+        <members>Opportunity</members>
+        <members>OpportunityLineItem</members>
+        <members>Order</members>
+        <members>OrderItem</members>
+        <members>Organization</members>
+        <members>OrgDeleteRequest</members>
+        <members>PartnerFundAllocation</members>
+        <members>PartnerFundClaim</members>
+        <members>PartnerFundRequest</members>
+        <members>PartnerMarketingBudget</members>
+        <members>PendingServiceRouting</members>
+        <members>Product2</members>
+        <members>QuickText</members>
+        <members>samplecustomsetting__c</members>
+        <members>Site</members>
+        <members>smith__c</members>
+        <members>SocialPersona</members>
+        <members>Solution</members>
+        <members>StreamingChannel</members>
+        <members>Suggestion__c</members>
+        <members>Task</members>
+        <members>Topic</members>
+        <members>TopicAssignment</members>
+        <members>User</members>
+        <members>UserLicense</members>
+        <members>UserProvisioningRequest</members>
+        <members>UserServicePresence</members>
+        <name>Workflow</name>
+    </types>
+    <version>38.0</version>
+</Package>

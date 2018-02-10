@@ -1,0 +1,91 @@
+<apex:page standardController="Task">
+
+    <apex:includeScript value="https://apis.google.com/js/client.js"/>
+ <body> 
+ <input type="button" onClick='handleClientLoad1();' id="showCalendarId" value="View Calendar"/>  
+<iframe src="{!Task.CalendarUrl__c}" style="border: 0" width="600" height="800" frameborder="0" scrolling="no"/>
+ </body>   
+    <script>
+    
+    
+    var clientId1 = '738603473059-m0ao7749bufsh06hhoh5urvbok2bc0eb.apps.googleusercontent.com';
+    
+    console.log('after client id');
+    
+    var apiKey1 = 'AIzaSyAH9_ezc5byxuQXaC6ZjN1_fdpa5Wpnm04'; 
+    
+    console.log('after apiKEy');
+    var scopes1 = 'https://www.googleapis.com/auth/calendar';
+    console.log('after scopes');
+    
+    function handleClientLoad1() {
+
+        gapi.client.setApiKey(apiKey1);
+        window.setTimeout(checkAuth1,1);
+ 
+        
+    }
+    
+    console.log('after handle client load');
+    
+    function checkAuth1() {
+        
+        console.log('Inside checkAuth1');
+        
+        gapi.auth.authorize({client_id: clientId1, scope: scopes1, immediate: true}, handleAuthResult1);
+        console.log('Inside checkAuth1 after authorizing');
+    } 
+    console.log('after checkAuth1');
+    function handleAuthResult1(authResult1) {
+        // var authorizeButton = document.getElementById('authorize-button');
+        console.log('Inside handleAuthResult1');
+        if (authResult1 && !authResult1.error) {
+            console.log('Inside handleAuthResult1 if loop');
+            
+            makeApiCall1(); 
+            
+        } else {
+            console.log('Inside handleAuthResult1 else loop');
+            handleAuthClick1();
+        }
+    } 
+    console.log('Before handleAuthClick1');
+    function handleAuthClick1() {
+        console.log('Inside handleAuthClick1');
+        gapi.auth.authorize({client_id: clientId1, scope: scopes1, immediate: false}, handleAuthResult1);
+        console.log('Inside handleAuthClick1 after authorize');
+        return false;
+    } 
+    
+    console.log('Before makeApiCall1');
+    
+    // Load the API and make an API call. Display the results on the screen.
+    function makeApiCall1() {
+        console.log('Inside makeApiCall1 before AddEvent1');
+        AddEvent1();
+        console.log('Inside makeApiCall1 after AddEvent1');
+    }
+    
+    console.log('Before AddEvent1');
+    function AddEvent1()
+    {
+    gapi.client.load('calendar', 'v3', function() { 
+var request1 = gapi.client.calendar.events.list({ 
+'calendarId': 'primary'
+}); 
+
+//console.log('Request'+request1); 
+request1.execute(function(resp) { 
+ 
+
+window.location.reload(); 
+
+
+}); 
+});  
+    } 
+    </script>
+    
+    
+
+</apex:page>

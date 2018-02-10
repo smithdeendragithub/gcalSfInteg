@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>BBHotelDeals</fullName>
+        <categories>BBHotelDeals</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>BBHotelDeals</shortDescription>
+        <value>Congrats your regisration is confirmed and you will receive the confirmation email soon! &lt;br/&gt; Please find the possible hotel deals you may be interested.</value>
+    </labels>
+    <labels>
+        <fullName>Welcome</fullName>
+        <categories>Welcome page</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Welcome</shortDescription>
+        <value>Welcome to the Home page of Blueberry Events.&lt;br/&gt; Please click enter to view available events and register yourself!</value>
+    </labels>
+</CustomLabels>

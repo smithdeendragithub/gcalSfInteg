@@ -1,0 +1,13 @@
+<apex:page controller="SampleWrapperClass">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!invoicewrapper}" var="a" >
+                
+                <apex:column headerValue="Invoice" value="{!a.inv.Name}" />
+                <apex:column headerValue="Selected?" >
+                    <apex:inputCheckbox value="{!a.selectaction1}" />
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

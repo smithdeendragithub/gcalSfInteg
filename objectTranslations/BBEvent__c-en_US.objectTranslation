@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BBEvent</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BBEvents</value>
+    </caseValues>
+    <fields>
+        <label><!-- Available seats --></label>
+        <name>Available_seats__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enddate --></label>
+        <name>Enddate__c</name>
+    </fields>
+    <fields>
+        <label><!-- EventTitle --></label>
+        <name>EventTitle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Per Session Capacity --></label>
+        <name>Per_Session_Capacity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Register Before --></label>
+        <name>Registeration_due__c</name>
+    </fields>
+    <fields>
+        <label><!-- Startdate --></label>
+        <name>Startdate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Archived</masterLabel>
+            <translation><!-- Archived --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- TotalRegisterations --></label>
+        <name>TotalRegisterations__c</name>
+    </fields>
+    <fields>
+        <help><!-- Venue city --></help>
+        <label><!-- Venue --></label>
+        <name>Venue__c</name>
+        <picklistValues>
+            <masterLabel>Calgary</masterLabel>
+            <translation><!-- Calgary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ottawa</masterLabel>
+            <translation><!-- Ottawa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Toronto</masterLabel>
+            <translation><!-- Toronto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vancouver</masterLabel>
+            <translation><!-- Vancouver --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>BBEvent Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- End date cannot be before start date. Please select date which is future to startdate --></errorMessage>
+        <name>Enddate_shouldbeAfterStartdateOnly</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Registration date cannot be past date and should be before start date --></errorMessage>
+        <name>Reg_due_nopast_nolaterStartdate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Valid Start date will be a future date. Please enter appropriate future date --></errorMessage>
+        <name>Startdate_onlyfuture</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- An Event cannot be more than 2 day. Please update the end date accordingly --></errorMessage>
+        <name>twodayeventonly</name>
+    </validationRules>
+</CustomObjectTranslation>

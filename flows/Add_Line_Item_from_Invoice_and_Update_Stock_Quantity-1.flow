@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dynamicChoiceSets>
+        <name>dcMerchandise</name>
+        <dataType>String</dataType>
+        <displayField>Name</displayField>
+        <filters>
+            <field>Quantity__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <object>smith__c</object>
+        <outputAssignments>
+            <assignToReference>vQuantityAvailable</assignToReference>
+            <field>Quantity__c</field>
+        </outputAssignments>
+        <sortField>Name</sortField>
+        <sortOrder>Asc</sortOrder>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <formulas>
+        <name>fDecrementAvailableStock</name>
+        <dataType>Number</dataType>
+        <expression>{!vQuantityAvailable}-{!Quantity_Ordered}</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Add Line Item from Invoice and Update Stock Quantity {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Add Line Item from Invoice and Update Stock Quantity</label>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Line_Item</name>
+        <label>Create Line Item</label>
+        <locationX>311</locationX>
+        <locationY>282</locationY>
+        <connector>
+            <targetReference>Decrement_Available_Stock</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Invoice__c</field>
+            <value>
+                <elementReference>vInvoiceId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Merchandise__c</field>
+            <value>
+                <elementReference>Merchandise</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Quantity__c</field>
+            <value>
+                <elementReference>Quantity_Ordered</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unit_Price__c</field>
+            <value>
+                <elementReference>Unit_Price</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Line_Item__c</object>
+    </recordCreates>
+    <recordUpdates>
+        <name>Decrement_Available_Stock</name>
+        <label>Decrement Available Stock</label>
+        <locationX>317</locationX>
+        <locationY>397</locationY>
+        <connector>
+            <targetReference>Done</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Merchandise</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Quantity__c</field>
+            <value>
+                <elementReference>fDecrementAvailableStock</elementReference>
+            </value>
+        </inputAssignments>
+        <object>smith__c</object>
+    </recordUpdates>
+    <screens>
+        <name>Done</name>
+        <label>Done</label>
+        <locationX>320</locationX>
+        <locationY>491</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>confirmation_message</name>
+            <fieldText>Thank you.
+Your line item has been added to the invoice, and the available
+quantity of merchandise has been updated.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+    </screens>
+    <screens>
+        <name>Get_Line_Item_Info_From_User</name>
+        <label>Get Line Item Info From User</label>
+        <locationX>310</locationX>
+        <locationY>176</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Create_Line_Item</targetReference>
+        </connector>
+        <fields>
+            <name>Line_Item_Number</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>1</stringValue>
+            </defaultValue>
+            <fieldText>Line Item Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Merchandise</name>
+            <choiceReferences>dcMerchandise</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Merchandise</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Quantity_Ordered</name>
+            <dataType>Number</dataType>
+            <fieldText>Quantity Ordered</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+        <fields>
+            <name>Unit_Price</name>
+            <dataType>Currency</dataType>
+            <fieldText>Unit Price</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <scale>2</scale>
+        </fields>
+    </screens>
+    <startElementReference>Get_Line_Item_Info_From_User</startElementReference>
+    <variables>
+        <description>ID of the invoice to which the flow adds the new line item. A
+custom button on the Invoice detail page launches the flow and
+passes the invoice ID into this variable.</description>
+        <name>vInvoiceId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>vQuantityAvailable</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+</Flow>

@@ -1,0 +1,7 @@
+<apex:page controller="TestingClass" showHeader="false">
+    <h1>
+        Enna koduma saravanan ithu
+    </h1>
+    <apex:outputText >The invoice number is {!inv.name}, the invoice total cost is {!inv.Total_Invoice__c} and the status is {!inv.Status__c}</apex:outputText>/>
+    
+</apex:page>

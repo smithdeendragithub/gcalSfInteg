@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BlueBerryEvent</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BlueBerryEvents</value>
+    </caseValues>
+    <fields>
+        <label><!-- Attendees --></label>
+        <name>Attendees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Available Sessions --></label>
+        <name>Available_Sessions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Venue --></label>
+        <name>BlueBerryVenue__c</name>
+        <relationshipLabel><!-- Venue Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Event Capacity --></label>
+        <name>Event_Capacity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Due Date --></label>
+        <name>Event_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event End Date --></label>
+        <name>Event_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Start Date --></label>
+        <name>Event_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Archived</masterLabel>
+            <translation><!-- Archived --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sum of session capacity --></label>
+        <name>Sum_of_session_capacity__c</name>
+    </fields>
+    <layouts>
+        <layout>BlueBerryEvent Layout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Registraion due date cannot be past date or cannot be later than start date of Event --></errorMessage>
+        <name>DuedateShouldbeAppropriate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- End Date of Event can be after start date only --></errorMessage>
+        <name>EndDateComesAfterStartDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sorry the session is full. Please check for other available session --></errorMessage>
+        <name>EventFull</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Event cannot be more than 2 day event --></errorMessage>
+        <name>EventsShouldBe2daysOnly</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sum of all the related session capacity cannot be greater than Event Capacity --></errorMessage>
+        <name>SessionCapacityLessThanEvent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Start date should be future date --></errorMessage>
+        <name>StartDateToBeFutureDate</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,58 @@
+<messaging:emailTemplate subject="Auto Confirmation RegistrationId - {!relatedTo.Name}" recipientType="Contact" relatedToType="BlueBerryEventRegistration__c">
+<messaging:htmlEmailBody >
+Hi {!relatedTo.Contact__r.lastname} {!relatedTo.Contact__r.firstName} ,
+
+<br/><br/>
+Thankyou for registering to the event and please find the details below. 
+<br/>
+<p>
+<table border="0" cellspacing="0" cellpadding="5" width="800" id="table1" align="center">
+<tr>
+<td><b>
+Event Name
+</b></td>
+<td>
+{!relatedTo.BlueBerryEvent__r.Name}
+</td>
+</tr>
+<tr>
+<td><b>
+Session Name
+</b></td>
+<td>
+{!relatedTo.BlueBerrySession__r.Name}
+</td>
+</tr>
+<tr>
+<td><b>
+Event Date (DD/MM/YYYY)
+</b></td>
+<td>
+<apex:outputField value="{!relatedTo.BlueBerryEvent__r.Event_Start_Date__c}"></apex:outputField>
+
+</td>
+</tr>
+<tr>
+<td><b>
+Event Venue Address
+</b></td>
+<td>
+{!relatedTo.BlueBerryEvent__r.BlueBerryVenue__r.VenueAddress__c}
+</td>
+</tr>
+<tr>
+<td><b>
+Event Venue City
+</b></td>
+<td>
+{!relatedTo.BlueBerryEvent__r.BlueBerryVenue__r.Name}
+</td>
+</tr>
+</table>
+</p>
+<br/>
+Thanks <br/>
+Blueberry Events Team
+
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

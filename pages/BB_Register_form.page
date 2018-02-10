@@ -1,0 +1,53 @@
+<apex:page controller="BBEvent_Registration_Contorller" showHeader="false" action="{!pageload}"  docType="html-5.0">
+   
+    <head>
+        <title>Blueberry Event Registration</title>
+        <apex:includeScript value="{!URLFOR($Resource.BBResources,'js/validation.js')}"/>
+        
+    </head>
+    <body>
+        <div style="width:50%; margin: 0 auto; text-align:left;">
+            <apex:form id="register" >
+            <apex:pageMessages id="duplicateRecords"/>
+                <apex:pageBlock id="pblock">
+
+                    <apex:pageBlockSection id="pblocksection" collapsible="false">
+                    <apex:facet name="header">
+                        <img src="http://free-121d5f44d20-121d603d1c5-121ee2b8103.force.com/img/icon/bank32.png"/>
+                        <h1 style="text-align:center;">
+                            Enter Your Details
+                        </h1>
+                	</apex:facet>
+                        <apex:outputLabel for="inputEmailId" value="Email"/>
+                        <apex:inputText id="inputEmailId" value="{!registerEmail}" onblur="validatemailid()"/>
+                       
+                        <apex:outputLabel for="FirstName" value="FirstName"/>
+                        <apex:inputText id="FirstName" value="{!firstName}" />
+                        <apex:outputLabel for="LastName" value="LastName"/>
+                        <apex:inputText id="LastName" value="{!lastName}" />
+                        <apex:outputLabel value="Session" />
+                        <apex:selectList size="1" value="{!selectedSession}" >
+                            <apex:selectOptions value="{!sessionOptionsList}" />
+                        </apex:selectList>
+                        <div align="center" draggable="false" >
+                            <apex:commandButton action="{!completeRegistration}" value="Submit" style="float:centre" />
+
+                        </div>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:form>
+        </div>
+        <script type="text/javascript">
+        function validatemailid() {
+var x = document.getElementById('{!$Component.register.pblock.pblocksection.inputEmailId}').value;
+            //alert(x);
+ var checkIfEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+if( !checkIfEmail.test( x ) ) {
+    alert('Please enter valid email');
+    } 
+
+}
+        </script>
+    </body> 
+ 
+</apex:page>

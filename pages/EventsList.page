@@ -1,0 +1,32 @@
+<apex:page controller="BBC_Events_List" showHeader="false"   docType="html-5.0">
+    <head>
+        <title>Blueberry Events</title>
+    </head>
+    <body>
+
+        <div style="width:80%; margin: 0 auto; text-align:left;">
+            
+            <apex:pageblock title="Blue Berry Upcoming Events" >
+                <apex:pageblocktable value="{!eventList}" var="event" rendered="true"  >
+                    <!--apex:column value="{!event.Id}"/-->
+                    <apex:column headerValue="Event Name" value="{!event.Name}"/>
+                    <apex:column headerValue="Event Start Date" value="{!event.Event_Start_Date__c}"/>
+                    <!--<apex:column headerValue="Register Before" value="{!event.Event_Due_Date__c}"/>-->
+                    <apex:column headerValue="Event Venue City" value="{!event.BlueBerryVenue__r.Name}"/>
+                    <apex:column headerValue="Event Venue Address" value="{!event.BlueBerryVenue__r.VenueAddress__c}"/>
+                    <apex:column headerValue="Event Venue Contact No." value="{!event.BlueBerryVenue__r.Venue_Contact__c}"/>
+                    <apex:column >
+                        <apex:form >
+                            <apex:commandButton action="{!RegisterForm}" value="Register" rerender="all">
+                                <apex:param assignTo="{!eventRecordId}" value="{!event.Id}" name="eventRecordId"/>
+                            </apex:commandButton>
+                        </apex:form>
+                    </apex:column>
+                    <!--<apex:column value="{!event.Venue__c}"/>-->
+                </apex:pageblocktable>
+            </apex:pageblock>
+            
+        </div>   
+    </body>
+    <apex:pageMessages />
+</apex:page>

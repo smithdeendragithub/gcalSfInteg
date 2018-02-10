@@ -1,0 +1,38 @@
+<apex:page showHeader="false" controller="BB_SuccessHotelDeals" docType="html-5.0">
+<head>
+    <title>Blueberry Sucess</title>
+    <apex:includeScript value="{!URLFOR($Resource.BBResources,'js/BBDisclaimer.js')}"/>
+</head>
+<body>
+    <h1>
+        
+                    
+    </h1> 
+                   
+    <div style="width:50%; margin: 0 auto; text-align:left;">
+<apex:pageBlock rendered="{!IF(gotDeals,false,true)}" >
+           <apex:pageBlockSection title="{!$Label.BBHotelDeals}" columns="1" >
+            <apex:pageblockTable value="{!finaldeals}" var="deal" align="center" >
+                <!--<apex:column headerValue="FoundDate"  value="{!deal.FoundDate}"/>-->
+                <apex:column headerValue="City"  value="{!deal.City}"/>
+                <apex:column headerValue="StartDate"  value="{!deal.StartDate}"/>
+                <apex:column headerValue="% Savings"  value="{!deal.SavingsPercentage}"/>
+                <apex:column headerValue="Price" value="{!deal.CurrencyCode} : {!deal.Price}"/>
+                <apex:column headerValue="StarRating" value="{!deal.StarRating}"/>
+                <apex:column headerValue="Book">
+                    <apex:outputLink value="{!deal.Url}" shape="circle" target="_blank" onclick="disclaimer()">
+                        Reserve
+                    </apex:outputLink>
+                </apex:column>
+            </apex:pageblockTable>
+
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+
+
+    </div>
+
+</body>
+<apex:pageMessages />
+</apex:page>

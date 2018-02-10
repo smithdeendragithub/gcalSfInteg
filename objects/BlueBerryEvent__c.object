@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Attendees__c</fullName>
+        <externalId>false</externalId>
+        <label>Attendees</label>
+        <summaryForeignKey>BlueBerryEventRegistration__c.BlueBerryEvent__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Available_Sessions__c</fullName>
+        <externalId>false</externalId>
+        <label>Available Sessions</label>
+        <summaryForeignKey>BlueBerrySession__c.BlueBerryEvent__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>BlueBerryVenue__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Venue</label>
+        <referenceTo>BlueBerryVenue__c</referenceTo>
+        <relationshipLabel>Venue Details</relationshipLabel>
+        <relationshipName>BlueBerryEvents</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Event_Capacity__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Capacity</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Due Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Event_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Event End Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Event_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Start Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Archived</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Expired</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sum_of_session_capacity__c</fullName>
+        <description>Sum of capacity of all the sessions. Mainly to validate the sum of the sessions to be not greater than Event&apos;s capacity</description>
+        <externalId>false</externalId>
+        <label>Sum of session capacity</label>
+        <summarizedField>BlueBerrySession__c.Session_Capacity__c</summarizedField>
+        <summaryForeignKey>BlueBerrySession__c.BlueBerryEvent__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>BlueBerryEvent</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Event Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>BlueBerryEvents</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>DuedateShouldbeAppropriate</fullName>
+        <active>true</active>
+        <description>Registration due date cannot be after start date and cannot be past date as well</description>
+        <errorConditionFormula>OR( Event_Due_Date__c &gt; Event_Start_Date__c , Event_Due_Date__c &lt; TODAY() )</errorConditionFormula>
+        <errorDisplayField>Event_Due_Date__c</errorDisplayField>
+        <errorMessage>Registraion due date cannot be past date or cannot be later than start date of Event</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>EndDateComesAfterStartDate</fullName>
+        <active>true</active>
+        <errorConditionFormula>Event_End_Date__c &lt;= Event_Start_Date__c</errorConditionFormula>
+        <errorDisplayField>Event_End_Date__c</errorDisplayField>
+        <errorMessage>End Date of Event can be after start date only</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>EventFull</fullName>
+        <active>true</active>
+        <description>Error message to display the Event as full</description>
+        <errorConditionFormula>Attendees__c &gt; Event_Capacity__c</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>Sorry the session is full. Please check for other available session</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>EventsShouldBe2daysOnly</fullName>
+        <active>true</active>
+        <description>Events should be Max-2 day activity only</description>
+        <errorConditionFormula>Event_End_Date__c  -  Event_Start_Date__c &lt;&gt; 1</errorConditionFormula>
+        <errorDisplayField>Event_End_Date__c</errorDisplayField>
+        <errorMessage>Event cannot be more than 2 day event</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SessionCapacityLessThanEvent</fullName>
+        <active>true</active>
+        <description>The sum of all the session capacity should not be greater than the Event&apos;s capacity</description>
+        <errorConditionFormula>Sum_of_session_capacity__c  &gt;  Event_Capacity__c</errorConditionFormula>
+        <errorDisplayField>Event_Capacity__c</errorDisplayField>
+        <errorMessage>Sum of all the related session capacity cannot be greater than Event Capacity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>StartDateToBeFutureDate</fullName>
+        <active>true</active>
+        <description>Start Date to be future date only</description>
+        <errorConditionFormula>Event_Start_Date__c &lt;=  TODAY()</errorConditionFormula>
+        <errorDisplayField>Event_Start_Date__c</errorDisplayField>
+        <errorMessage>Start date should be future date</errorMessage>
+    </validationRules>
+</CustomObject>

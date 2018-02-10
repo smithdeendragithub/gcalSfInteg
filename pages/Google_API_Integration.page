@@ -1,0 +1,5 @@
+<apex:page standardController="Task" docType="html-5.0"> 
+
+ <iframe src="{!Task.CalendarUrl__c}" style="border: 0" width="600" height="800" frameborder="0" scrolling="no"/>
+
+</apex:page>

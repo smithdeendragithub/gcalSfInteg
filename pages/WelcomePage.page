@@ -1,0 +1,19 @@
+<apex:page controller="WelcomeController" showHeader="false" docType="html-5.0">
+    <head>
+        <title>Blueberry Welcome Page</title>
+    </head>
+    <body style="text-align:center;">
+        <div style="width:50%; margin: 0 auto; text-align:center;">
+        <h1>
+            <apex:outputText value="{!$Label.Welcome}" escape="false" />
+        </h1> 
+            <br/>
+            <div style="width:50%; margin: 0 auto; text-align:center;">
+            <apex:form >
+                <apex:commandButton value="View Events" action="{!Eventlist}" />
+            </apex:form>
+            </div>
+        </div>
+    </body>
+    <apex:pageMessages />
+</apex:page>

@@ -1,0 +1,11 @@
+<apex:page controller="CountryStateController"><apex:form > 
+    	<apex:pageBlock >    
+            <apex:pageBlockSection >
+            	<apex:selectList value="{!country}" label="Country" multiselect="false" size="1">
+                    <apex:actionSupport event="onchange"/>
+                        <apex:selectOptions value="{!countryOptions}"/>
+                </apex:selectList>
+            </apex:pageBlockSection>            	
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

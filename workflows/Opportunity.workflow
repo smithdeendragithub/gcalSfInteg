@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>Test</fullName>
+        <apiVersion>40.0</apiVersion>
+        <endpointUrl>https://aimiauat.sentientppm.com.au/sentient.salesforce/services/projectservice.asmx</endpointUrl>
+        <fields>CloseDate</fields>
+        <fields>ContractId</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>CurrentGenerators__c</fields>
+        <fields>DeliveryInstallationStatus__c</fields>
+        <fields>Description</fields>
+        <fields>ExpectedRevenue</fields>
+        <fields>FiscalQuarter</fields>
+        <fields>FiscalYear</fields>
+        <fields>ForecastCategory</fields>
+        <fields>ForecastCategoryName</fields>
+        <fields>HasOpenActivity</fields>
+        <fields>HasOpportunityLineItem</fields>
+        <fields>HasOverdueTask</fields>
+        <fields>Id</fields>
+        <fields>IsClosed</fields>
+        <fields>IsDeleted</fields>
+        <fields>IsPrivate</fields>
+        <fields>IsWon</fields>
+        <fields>LastActivityDate</fields>
+        <fields>LastModifiedById</fields>
+        <fields>LastModifiedDate</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>smithdeendra@gmail.com</integrationUser>
+        <name>Test</name>
+        <protected>true</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+</Workflow>

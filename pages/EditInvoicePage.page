@@ -1,0 +1,29 @@
+<apex:page standardController="Invoice__c" showHeader="false" >
+    <!-- Begin Default Content REMOVE THIS -->
+    <h1>Edit Invoice {!Invoice__c.Name}</h1>
+    
+    <apex:form id="EditInvoice_1">
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputField value="{!Invoice__c.Name}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!Invoice__c.Status__c}"/> 
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!Invoice__c.Total_Invoice__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!Invoice__c.triggerupdatefield__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!Save}" value="Save"/>
+                <apex:commandButton action="{!Cancel}" value="Cancel"/>
+               <!-- <apex:commandButton action="{!Edit}" value="Edit"/> -->
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+    </apex:form>
+    <!-- End Default Content REMOVE THIS -->
+</apex:page>

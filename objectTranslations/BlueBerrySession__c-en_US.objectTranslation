@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BlueBerrySession</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BlueBerrySessions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Event Name --></label>
+        <name>BlueBerryEvent__c</name>
+        <relationshipLabel><!-- BlueBerrySessions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Session Capacity --></label>
+        <name>Session_Capacity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Registration --></label>
+        <name>Total_Registration__c</name>
+    </fields>
+    <layouts>
+        <layout>BlueBerrySession Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Sorry the session is full, please check for other available session if any. --></errorMessage>
+        <name>CannotBookMorethanCapacity</name>
+    </validationRules>
+</CustomObjectTranslation>

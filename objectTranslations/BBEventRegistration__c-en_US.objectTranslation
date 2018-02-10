@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BBEventRegistration</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BBEventRegistrations</value>
+    </caseValues>
+    <fields>
+        <label><!-- BBEvent --></label>
+        <name>BBEventToRegister__c</name>
+        <relationshipLabel><!-- BBEventRegistrations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- BBContact --></label>
+        <name>Eventregistree__c</name>
+        <relationshipLabel><!-- BBEventRegistrations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Session --></label>
+        <name>Session__c</name>
+        <picklistValues>
+            <masterLabel>Day1:Session A 10:00AM-12:00PM</masterLabel>
+            <translation><!-- Day1:Session A 10:00AM-12:00PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Day1:Session B 12:30PM-01:30PM</masterLabel>
+            <translation><!-- Day1:Session B 12:30PM-01:30PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Day1:Session C 01:30PM-03:00PM</masterLabel>
+            <translation><!-- Day1:Session C 01:30PM-03:00PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Day2:Session D 09:00AM-10:30AM</masterLabel>
+            <translation><!-- Day2:Session D 09:00AM-10:30AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Day2:Session E 11:00AM-01:00PM</masterLabel>
+            <translation><!-- Day2:Session E 11:00AM-01:00PM --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

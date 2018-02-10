@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Custom Table to store Blueberry Event.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Available_seats__c</fullName>
+        <externalId>false</externalId>
+        <label>Available seats</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Enddate__c</fullName>
+        <description>End date for the event</description>
+        <externalId>false</externalId>
+        <label>Enddate</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EventTitle__c</fullName>
+        <description>Event title</description>
+        <externalId>false</externalId>
+        <label>EventTitle</label>
+        <length>200</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Per_Session_Capacity__c</fullName>
+        <externalId>false</externalId>
+        <label>Per Session Capacity</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Registeration_due__c</fullName>
+        <description>Due date for registration to the event</description>
+        <externalId>false</externalId>
+        <label>Register Before</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Startdate__c</fullName>
+        <description>Start date of event</description>
+        <externalId>false</externalId>
+        <label>Startdate</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Archived</fullName>
+                    <color>#FF6666</color>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>TotalRegisterations__c</fullName>
+        <description>Count of total registerations</description>
+        <externalId>false</externalId>
+        <label>TotalRegisterations</label>
+        <summaryForeignKey>BBEventRegistration__c.BBEventToRegister__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Venue__c</fullName>
+        <description>Select the venue</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Venue city</inlineHelpText>
+        <label>Venue</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Calgary</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ottawa</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Toronto</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vancouver</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>BBEvent</label>
+    <nameField>
+        <label>Event Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>BBEvents</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Enddate_shouldbeAfterStartdateOnly</fullName>
+        <active>true</active>
+        <description>End Date of Event can be after start date only</description>
+        <errorConditionFormula>Enddate__c   &lt;=   Startdate__c</errorConditionFormula>
+        <errorDisplayField>Enddate__c</errorDisplayField>
+        <errorMessage>End date cannot be before start date. Please select date which is future to startdate</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Reg_due_nopast_nolaterStartdate</fullName>
+        <active>true</active>
+        <description>Registraion due date cannot be past date and cannot be later than start date of session</description>
+        <errorConditionFormula>OR(Registeration_due__c  &gt;=  Startdate__c ,Registeration_due__c  &lt; TODAY())</errorConditionFormula>
+        <errorDisplayField>Registeration_due__c</errorDisplayField>
+        <errorMessage>Registration date cannot be past date and should be before start date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Startdate_onlyfuture</fullName>
+        <active>true</active>
+        <description>Start date can be future dates only</description>
+        <errorConditionFormula>Startdate__c  &lt;=  TODAY()</errorConditionFormula>
+        <errorDisplayField>Startdate__c</errorDisplayField>
+        <errorMessage>Valid Start date will be a future date. Please enter appropriate future date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>twodayeventonly</fullName>
+        <active>true</active>
+        <description>Event cannot be more than 2 day event</description>
+        <errorConditionFormula>Enddate__c  -  Startdate__c  &lt;&gt; 1</errorConditionFormula>
+        <errorDisplayField>Enddate__c</errorDisplayField>
+        <errorMessage>An Event cannot be more than 2 day. Please update the end date accordingly</errorMessage>
+    </validationRules>
+</CustomObject>

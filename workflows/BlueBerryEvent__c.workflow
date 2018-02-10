@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>SetExpired</fullName>
+        <field>Status__c</field>
+        <literalValue>Expired</literalValue>
+        <name>SetExpired</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateStatustoActive</fullName>
+        <description>Archive the value</description>
+        <field>Status__c</field>
+        <literalValue>Archived</literalValue>
+        <name>UpdateStatustoActive</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>BlueBerryUpdateStatus2Archive</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>BlueBerryEvent__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Active,Expired</value>
+        </criteriaItems>
+        <description>Update Status of Events to Archive once 30days from Start date of event</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>UpdateStatustoActive</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>BlueBerryEvent__c.Event_Start_Date__c</offsetFromField>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>UpdateEventAsExpired</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>BlueBerryEvent__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </criteriaItems>
+        <description>Update the status of the event as expired when</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>SetExpired</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>BlueBerryEvent__c.Event_Due_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+</Workflow>
